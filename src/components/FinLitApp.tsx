@@ -18,12 +18,12 @@ export default function FinLitApp() {
   const communityMembers = [
     {
       id: 1,
-      name: 'Finn Bauer',
-      title: 'Crypto-Enthusiast',
-      bio: '20 J. Student | Trading & Tech 📱 | Building web3 future',
+      name: 'Robin Klein',
+      title: 'Crypto-Enthusiast & Gamer',
+      bio: '20 J. Student | Gamer & Tech 📱 | Building web3 future',
       level: 'Level 8',
       xp: 2800,
-      badges: ['🎯 Early Adopter', '₿ Crypto Pro', '🚀 Top Trader'],
+      badges: ['🎯 Early Adopter', '₿ Crypto Pro', '🚀 Gamer'],
       followers: 342,
       isPremium: true
     },
