@@ -61,32 +61,33 @@ export default function FinLitApp() {
     <div className="max-w-md mx-auto p-4 bg-black text-white min-h-screen">
       <header className="flex justify-between items-center mb-6">
         <div className="flex items-center space-x-2">
-          <Target className="text-green-400" />
-          <span className="font-bold text-xl">FinLit</span>
+          <Leaf className="text-green-400" />
+          <span className="font-bold text-xl">Umweltbank</span>
         </div>
         <div className="flex space-x-2">
           <div className="bg-green-900 px-4 py-1 rounded-full text-sm flex items-center">
             <Leaf className="w-4 h-4 mr-1" />
             <span>1.2t CO₂</span>
           </div>
-          <div className="bg-purple-900 px-4 py-1 rounded-full text-sm">
+          <div className="bg-green-800 px-4 py-1 rounded-full text-sm">
             {xp} XP 🔥
           </div>
         </div>
       </header>
 
       <nav className="flex space-x-4 mb-8 overflow-x-auto">
-        {['learn', 'community', 'stats', 'finfluencer', 'consultant', 'ai'].map(tab => (
+        {['learn', 'esg', 'community', 'stats', 'finfluencer', 'consultant', 'ai'].map(tab => (
           <button
             key={tab}
             onClick={() => setActiveTab(tab)}
             className={`px-4 py-2 rounded-xl whitespace-nowrap ${
-              activeTab === tab 
-                ? 'bg-gradient-to-r from-green-600 to-purple-600' 
+              activeTab === tab
+                ? 'bg-gradient-to-r from-green-600 to-emerald-500'
                 : 'bg-gray-800'
             }`}
           >
             {tab === 'learn' && <Brain className="inline mr-2" size={18} />}
+            {tab === 'esg' && <Leaf className="inline mr-2" size={18} />}
             {tab === 'community' && <Users className="inline mr-2" size={18} />}
             {tab === 'stats' && <TrendingUp className="inline mr-2" size={18} />}
             {tab === 'finfluencer' && <Users className="inline mr-2" size={18} />}
@@ -119,6 +120,66 @@ export default function FinLitApp() {
         </div>
       )}
 
+      {activeTab === 'esg' && (
+        <div className="space-y-4">
+          <div className="bg-gradient-to-br from-green-900 to-emerald-900 p-6 rounded-xl">
+            <h2 className="text-2xl font-bold mb-2 flex items-center">
+              <Leaf className="mr-2" /> Dein ESG Impact
+            </h2>
+            <p className="text-green-200 mb-4">Investiere mit echtem Umwelt-Impact</p>
+
+            <div className="grid grid-cols-2 gap-4 mb-4">
+              <div className="bg-black/20 p-4 rounded-xl">
+                <div className="text-3xl font-bold text-green-400">1.2t</div>
+                <div className="text-sm text-gray-300">CO₂ eingespart</div>
+              </div>
+              <div className="bg-black/20 p-4 rounded-xl">
+                <div className="text-3xl font-bold text-green-400">A+</div>
+                <div className="text-sm text-gray-300">ESG Rating</div>
+              </div>
+            </div>
+
+            <div className="bg-black/30 p-4 rounded-xl mb-4">
+              <h3 className="font-bold mb-2">Nachhaltige Investments</h3>
+              <div className="space-y-2">
+                <div className="flex justify-between items-center">
+                  <span className="text-sm">🌊 Wasserkraft ETF</span>
+                  <span className="text-green-400 font-bold">+12.3%</span>
+                </div>
+                <div className="flex justify-between items-center">
+                  <span className="text-sm">☀️ Solar Energy Fonds</span>
+                  <span className="text-green-400 font-bold">+8.7%</span>
+                </div>
+                <div className="flex justify-between items-center">
+                  <span className="text-sm">🌳 Aufforstung Bonds</span>
+                  <span className="text-green-400 font-bold">+5.2%</span>
+                </div>
+              </div>
+            </div>
+
+            <button className="w-full bg-gradient-to-r from-green-600 to-emerald-500 py-4 rounded-xl font-bold hover:from-green-500 hover:to-emerald-400 transition-all">
+              Jetzt nachhaltig investieren
+            </button>
+          </div>
+
+          <div className="bg-gray-800 p-4 rounded-xl">
+            <h3 className="font-bold mb-3">Impact Stories</h3>
+            <div className="space-y-3">
+              <div className="bg-gray-700 p-3 rounded-xl">
+                <p className="text-sm text-gray-300">
+                  Mit deinen Investments wurden bereits <span className="text-green-400 font-bold">150 Bäume</span> gepflanzt 🌱
+                </p>
+              </div>
+              <div className="bg-gray-700 p-3 rounded-xl">
+                <p className="text-sm text-gray-300">
+                  Deine grünen Investments unterstützen <span className="text-green-400 font-bold">12 Solarprojekte</span> weltweit ☀️
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+
       {activeTab === 'community' && (
         <div className="space-y-4">
           <h2 className="text-xl font-bold mb-4">Community Leaders 🏆</h2>
@@ -133,9 +194,9 @@ export default function FinLitApp() {
                     <h3 className="font-bold text-lg">{member.name}</h3>
                     {member.isPremium && <Star className="text-yellow-400 ml-2" size={16} />}
                   </div>
-                  <p className="text-purple-400">{member.title}</p>
+                  <p className="text-green-400">{member.title}</p>
                   <p className="text-gray-400 text-sm mt-1">{member.bio}</p>
-                  <p className="text-sm text-purple-300 mt-1">{member.level} • {member.followers} Follower</p>
+                  <p className="text-sm text-green-300 mt-1">{member.level} • {member.followers} Follower</p>
                 </div>
               </div>
               <div className="flex flex-wrap gap-2 mt-3">
@@ -147,9 +208,9 @@ export default function FinLitApp() {
               </div>
             </div>
           ))}
-          <button 
+          <button
             onClick={() => setShowPremium(true)}
-            className="w-full bg-gradient-to-r from-purple-600 to-pink-600 p-4 rounded-xl mt-4"
+            className="w-full bg-gradient-to-r from-green-600 to-emerald-600 p-4 rounded-xl mt-4"
           >
             <span className="font-bold">Connect with Community Leaders</span>
             <p className="text-sm text-gray-200">Unlock premium to chat & learn directly</p>
@@ -188,14 +249,14 @@ export default function FinLitApp() {
               <div className="flex items-center justify-between mb-2">
                 <div>
                   <h3 className="font-bold text-lg">{influencer.name}</h3>
-                  <p className="text-purple-400">{influencer.handle}</p>
+                  <p className="text-green-400">{influencer.handle}</p>
                 </div>
                 <div className="text-gray-400">{influencer.followers} followers</div>
               </div>
               <p className="text-gray-200 mb-2">{influencer.content}</p>
               <div className="flex flex-wrap gap-2">
                 {influencer.tags.map(tag => (
-                  <span key={tag} className="bg-purple-900 px-2 py-1 rounded-full text-sm">
+                  <span key={tag} className="bg-green-900 px-2 py-1 rounded-full text-sm">
                     {tag}
                   </span>
                 ))}
@@ -212,11 +273,11 @@ export default function FinLitApp() {
             <p className="text-gray-400 mb-4">Get personalized financial advice from certified experts</p>
             
             {consultants.map(consultant => (
-              <div 
+              <div
                 key={consultant.id}
                 className={`p-4 rounded-xl mb-4 ${
-                  consultant.isPremium 
-                    ? 'bg-gradient-to-r from-purple-600 to-pink-600' 
+                  consultant.isPremium
+                    ? 'bg-gradient-to-r from-green-600 to-emerald-600'
                     : 'bg-gray-700'
                 }`}
               >
@@ -248,7 +309,7 @@ export default function FinLitApp() {
             <div className="bg-gray-700 p-3 rounded-xl max-w-[80%]">
               Hey! 👋 Was möchtest du über Finanzen lernen?
             </div>
-            <div className="bg-purple-600 p-3 rounded-xl max-w-[80%] ml-auto">
+            <div className="bg-green-600 p-3 rounded-xl max-w-[80%] ml-auto">
               Erkläre mir Bitcoin einfach!
             </div>
             <div className="bg-gray-700 p-3 rounded-xl max-w-[80%]">
@@ -260,9 +321,9 @@ export default function FinLitApp() {
             <input
               type="text"
               placeholder="Stelle deine Frage..."
-              className="flex-1 bg-gray-700 rounded-xl px-4 py-2 focus:outline-none focus:ring-2 focus:ring-purple-500"
+              className="flex-1 bg-gray-700 rounded-xl px-4 py-2 focus:outline-none focus:ring-2 focus:ring-green-500"
             />
-            <button className="bg-purple-600 p-2 rounded-xl">
+            <button className="bg-green-600 p-2 rounded-xl">
               <MessageCircle size={24} />
             </button>
           </div>
@@ -272,7 +333,7 @@ export default function FinLitApp() {
       {showPremium && (
         <div className="fixed inset-0 bg-black/90 flex items-center justify-center p-4">
           <div className="bg-gray-800 p-6 rounded-2xl w-full max-w-sm">
-            <h2 className="text-2xl font-bold mb-4">Green Investor Premium 🌱</h2>
+            <h2 className="text-2xl font-bold mb-4">Umweltbank Premium 🌱</h2>
             
             <div className="bg-gray-700 p-4 rounded-xl mb-4">
               <h3 className="font-bold">Free</h3>
@@ -283,7 +344,7 @@ export default function FinLitApp() {
               </ul>
             </div>
 
-            <div className="bg-gradient-to-r from-green-900 to-purple-900 p-4 rounded-xl mb-6">
+            <div className="bg-gradient-to-r from-green-900 to-emerald-900 p-4 rounded-xl mb-6">
               <h3 className="font-bold">Premium Benefits</h3>
               <ul className="space-y-2 mt-2">
                 <li>• Advanced sustainable investment courses</li>
@@ -297,8 +358,8 @@ export default function FinLitApp() {
             <div className="text-center">
               <div className="text-3xl font-bold mb-2">4,95€<span className="text-sm font-normal">/month</span></div>
               <div className="text-green-400 text-sm mb-4">Student Green Deal</div>
-              <button 
-                className="w-full bg-gradient-to-r from-green-600 to-purple-600 py-3 rounded-xl mb-2"
+              <button
+                className="w-full bg-gradient-to-r from-green-600 to-emerald-500 py-3 rounded-xl mb-2"
                 onClick={() => setShowPremium(false)}
               >
                 Start Free Trial
