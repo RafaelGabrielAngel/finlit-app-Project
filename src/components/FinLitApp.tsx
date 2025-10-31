@@ -1,7 +1,7 @@
 'use client'
 
 import React, { useState } from 'react';
-import { Brain, Star, TrendingUp, Target, Users, MessageCircle, Leaf } from 'lucide-react';
+import { Brain, Star, TrendingUp, Users, MessageCircle, Leaf } from 'lucide-react';
 import { LineChart, Line, XAxis, YAxis, Tooltip } from 'recharts';
 
 export default function FinLitApp() {
