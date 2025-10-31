@@ -62,7 +62,7 @@ export default function FinLitApp() {
       <header className="flex justify-between items-center mb-6">
         <div className="flex items-center space-x-2">
           <Leaf className="text-green-400" />
-          <span className="font-bold text-xl">Umweltbank</span>
+          <span className="font-bold text-xl">UmweltBank</span>
         </div>
         <div className="flex space-x-2">
           <div className="bg-green-900 px-4 py-1 rounded-full text-sm flex items-center">
@@ -333,7 +333,7 @@ export default function FinLitApp() {
       {showPremium && (
         <div className="fixed inset-0 bg-black/90 flex items-center justify-center p-4">
           <div className="bg-gray-800 p-6 rounded-2xl w-full max-w-sm">
-            <h2 className="text-2xl font-bold mb-4">Umweltbank Premium 🌱</h2>
+            <h2 className="text-2xl font-bold mb-4">UmweltBank Premium 🌱</h2>
             
             <div className="bg-gray-700 p-4 rounded-xl mb-4">
               <h3 className="font-bold">Free</h3>
